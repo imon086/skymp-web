@@ -123,6 +123,7 @@ module.exports = {
         new CopyWebpackPlugin([
             { from: 'config.js' },
             { from: 'favicon.*' },
+            { from: 'robots.txt' },
         ]),
 
         // new SplitByPathPlugin([
