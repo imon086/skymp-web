@@ -29,30 +29,31 @@ $root = "../../"
         color inherit
 
 // --- backgrounds ---
-.bg-container
-    background-image linear-gradient(to bottom, rgba(#ffffff, 0.45) 0%, rgba(#ffffff, 0.45) 80%, rgba(#313436, 0) 100%)
+.bg-panel
+    background-image linear-gradient(to bottom, rgba(white, 0.45) 0%, rgba(#313436, 0) 100%)
     background-repeat no-repeat
 
-.border-container
+    &-big
+        background-image linear-gradient(to bottom, rgba(white, 0.45) 0%, rgba(white, 0.45) 80%, rgba(#313436, 0) 100%)
+        background-repeat no-repeat
+
+.border-panel
     position relative
     border-top 2px solid rgba(white, 0.8)
-    // border-left 2px solid linear-gradient(to bottom, rgba(#ffffff, 0.45) 0%, rgba(#313436, 0) 100px)
 
     &:before, &:after
-        background-image linear-gradient(to bottom, rgba(white, 0.6) 0%, rgba(#313436, 0) 180px)
+        content ""
+        position absolute
+        top -2px
+        width 2px
+        height 100%
+        background-image linear-gradient(to bottom, rgba(white, 0.6) 0%, rgba(#313436, 0) 100%)
 
     &:before
-        content ""
-        position absolute
-        top -2px
         left 0
-        width 2px
-        bottom 0
-
     &:after
-        content ""
-        position absolute
-        top -2px
         right 0
-        width 2px
-        bottom 0
+
+    &_big
+        &:before, &:after
+            height 180px

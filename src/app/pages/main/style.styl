@@ -47,14 +47,52 @@ $root = "../../../"
     .block
         background-image linear-gradient(to bottom, rgba(#ffffff, 0.45) 0%, rgba(#ffffff, 0.45) 80%, rgba(#313436, 0) 100%)
 
+#sidebar
+    .sidebar-item
+        display block
+        width 100%
+        margin 15px 0
+
+        &:first
+            margin-top 0
+        &:last
+            margin-bottom 0
+
+
+        &_link
+            transition all ease 0.2s
+
+            & > img
+                width 100%
+                height auto
+
+            &:hover
+                transform scale(1.05)
+                box-shadow rgba(black, 0.7) 1px 1px 15px 0.5px
+
+
+
+#server-status
+    background rgba(white, 0.5)
+    padding 15px
+    // line-height 60px
+
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    color: #3bef54;
+    // font-family: Aniron;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.61px;
+
+
 #footer
     margin-top 15px
     height 100px
     // min-height 100px
 
-    .bg-container
+    .bg-panel
         background-image linear-gradient(to bottom, rgba(#ffffff, 0.45) 0%, rgba(#313436, 0) 100%)
 
-    .border-container
+    .border-panel
         &:before, &:after
             background-image linear-gradient(to bottom, rgba(white, 0.6) 0%, rgba(#313436, 0) 100%)

@@ -1,6 +1,8 @@
 extends ../../../layout.pug
 
 block body
+    - var sidebarLinks = [require("assets/images/links/right1.png"), require("assets/images/links/right2.png"), require("assets/images/links/right3.png"), require("assets/images/links/right4.png")]
+    
     div#viewport
         div.bg-top
             img(src=require("assets/images/bg-stars.png") width="100%" height="auto")
@@ -43,19 +45,25 @@ block body
                             //- li(data-target="#carousel" data-slide-to="2")
                             
                     //- div.h-100.col-sm-12
-                        div.bg-block.h-100
+                        div.bg-panel.h-100
         
             div#content.row.no-gutters
                 div#news.col-sm-9
                     div.col-sm-12.h-100
-                        div.block.bg-container.border-container.h-100
+                        div.block.bg-panel-big.border-panel.border-panel_big.h-100
                             
                 div#sidebar.col-sm-3
                     div.col-sm-12.h-100
                         div.block.h-100
+                            div#server-status.border-panel.text-center
+                                span.status-text.text-success Онлайн
+                            
+                            each link, i in sidebarLinks
+                                a.sidebar-item.sidebar-item_link(href="#"): img(src=link)
+                                
           
             div#footer.row.no-gutters
                 div.col-sm-12
                     div.h-100.col-sm-12
-                        div.block.bg-container.border-container.h-100
+                        div.block.bg-panel.border-panel.h-100
         
