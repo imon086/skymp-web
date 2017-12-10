@@ -55,7 +55,7 @@ module.exports = {
     devServer: {
         port: cfg.webserver.port,
         host: cfg.webserver.host,
-        hot: true,
+        // hot: true,
         inline: true,
         disableHostCheck: true,
         historyApiFallback: true,

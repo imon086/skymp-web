@@ -3,29 +3,70 @@ extends ../../../layout.pug
 block body
     div#viewport
         div.bg-top
-            img( src="https://media.discordapp.net/attachments/384036315374813186/384461712583032833/4bec1247d4529f9d.png" width="100%" height="auto")
+            img(src=require("assets/images/bg-stars.png") width="100%" height="auto")
         div.bg-bottom
-            img( src="https://media.discordapp.net/attachments/384036315374813186/384464195057614868/2.png" width="100%" height="auto")
+            img(src=require("assets/images/bg-main.png") width="100%" height="auto")
         
-        //- div.navbar
+        div#navbar.navbar.navbar-expand-sm
+            .container
+                a.navbar-brand: img(src=require("assets/logo/logo-white.png"))
+                .navbar-nav.font-header
+                    a.nav-link.text-uppercase.text-center(href="#") Новости
+                    a.nav-link.text-uppercase.text-center(href="#") Форум
+                    a.nav-link.text-uppercase.text-center(href="#") Особенности
+                    a.nav-link.text-uppercase.text-center(href="#") Поддержка
+                    a.nav-link.text-uppercase.text-center(href="#") Магазин
+                    a.nav-link.text-uppercase.text-center(href="#") Профиль
+        //- v2
+        div#navbar.navbar.navbar-expand-sm
+            .container
+                a.navbar-brand.d-none.d-lg-block(href="/"): img(src=require("assets/logo/logo-white.png"))
+                .col.navbar-nav.font-header
+                    a.nav-link.text-uppercase.text-center(href="/") Новости
+                    a.nav-link.text-uppercase.text-center(href="#") Форум
+                    a.nav-link.text-uppercase.text-center(href="#") Особенности
+                    a.nav-link.text-uppercase.text-center(href="#") Поддержка
+                    a.nav-link.text-uppercase.text-center(href="#") Магазин
+                    a.nav-link.text-uppercase.text-center(href="#") Профиль
       
         div.container.main-block.bg-tea
+            .row.no-gutters: .col-sm-12.text-center
+                a#btn-play.font-header.text-uppercase(href="#")
+                
             div#header.row.no-gutters
                 div.col-sm-12
-                    div.h100.col-sm-12
-                        div.bg-block.h100
+                    div#carousel.carousel.slide(data-ride="carousel")
+                        - var carouselPhotos = ['#', '#', '#']
+                        .carousel-inner
+                            each url, i in carouselPhotos
+                                .carousel-item.h-100(class=`${i==0 ? 'active' : ''}`)
+                                    img.h-100(class=`bg-${i}` src=url)
+
+                        .carousel-controls
+                            a.carousel-control-prev(href="#carousel" role="button" data-slide="prev")
+                                span.carousel-control-prev-icon(aria-hidden="true")
+                            a.carousel-control-next(href="#carousel" role="button" data-slide="next")
+                                span.carousel-control-next-icon(aria-hidden="true")
+                        ol.carousel-indicators
+                            each url, i in carouselPhotos
+                                li(class=`${i==0 ? 'active' : ''}` data-target="#carousel" data-slide-to=i)
+                            //- li(data-target="#carousel" data-slide-to="1")
+                            //- li(data-target="#carousel" data-slide-to="2")
+                            
+                    //- div.h-100.col-sm-12
+                        div.bg-block.h-100
         
             div#content.row.no-gutters
                 div#news.col-sm-9
-                    div.col-sm-12.h100
-                        div.bg-block.h100
+                    div.col-sm-12.h-100
+                        div.bg-block.h-100
                             
                 div#sidebar.col-sm-3
-                    div.col-sm-12.h100
-                        div.bg-block.h100
+                    div.col-sm-12.h-100
+                        div.bg-block.h-100
           
             div#footer.row.no-gutters
                 div.col-sm-12
-                    div.h100.col-sm-12
-                        div.bg-block.h100
+                    div.h-100.col-sm-12
+                        div.bg-block.h-100
         

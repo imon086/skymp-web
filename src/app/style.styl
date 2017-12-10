@@ -5,8 +5,8 @@ body
     color: white
     font-size: 14px
 
-[ui-sref], [ng-click]
-    cursor: pointer
+// [ui-sref], [ng-click]
+//     cursor: pointer
 
 [disabled]
     cursor: not-allowed
@@ -17,7 +17,7 @@ ul
 
 a
     color: inherit
-    text-decoration: underline
+    // text-decoration: underline
 
 .ru-quotes
     &:before
@@ -25,9 +25,9 @@ a
     &:after
         content: '”'
 
-.no-gutter > [class*="col-"], [class*="col-"].nopadding
-    padding-left: 0 !important
-    padding-right: 0 !important
+// .no-gutter > [class*="col-"], [class*="col-"].nopadding
+//     padding-left: 0 !important
+//     padding-right: 0 !important
 
 .space-l, .space-lr
     &:before
@@ -48,3 +48,15 @@ a
     display: flex
     align-items: center
     height: 100%
+
+// --- bacgrounds ---
+for i in (0..10)
+    .bg-{i}
+        background rgba( hue(#bed, i*360/10), 0.7 )
+        // background rgba( mix(#fff, #bed, 20*i), 0.5 )
+
+.bg-block
+    background rgba(255, 255, 255, 0.2)
+
+.bg-tea
+    background rgba(187, 238, 221, 0.1)

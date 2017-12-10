@@ -1,6 +1,9 @@
+$root = "../../../"
+@require $root + "app/utils.styl"
+
 #viewport
     position relative
-    background url(https://media.discordapp.net/attachments/384036315374813186/384464266243342349/cloudback.png)
+    background url($root + "assets/images/bg-clouds.png")
     background-repeat repeat
     background-position-x -100px
       // perspective 1px
@@ -17,17 +20,18 @@
     left 0
     width 100%
 
-.bg-block
-    background rgba(255, 255, 255, 0.2)
-
-.bg-tea
-    background rgba(187, 238, 221, 0.1)
-
-.h100
-    height 100%
-
 .main-block
     padding 15px 0
+
+#btn-play
+    sprite("btn-play.png", 1, 3, 1)
+    display inline-block
+
+    &:hover
+        sprite("btn-play.png", 1, 3, 2)
+
+    &:active
+        sprite("btn-play.png", 1, 3, 3)
 
 #header
     min-height 100vh

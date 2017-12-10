@@ -1,0 +1,12 @@
+sprite(url, w, h, frame)
+    $width = image-size(url)[0] / w
+    $height = image-size(url)[1] / h
+    $x = frame % w
+    $y = floor(frame / w)
+
+    width $width
+    height $height
+    background-image url(url)
+    // background-size 100%
+    background-position $x*$width $y*$height
+    // background-offset-y 1
