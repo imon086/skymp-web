@@ -9,18 +9,7 @@ block body
         
         div#navbar.navbar.navbar-expand-sm
             .container
-                a.navbar-brand: img(src=require("assets/logo/logo-white.png"))
-                .navbar-nav.font-header
-                    a.nav-link.text-uppercase.text-center(href="#") Новости
-                    a.nav-link.text-uppercase.text-center(href="#") Форум
-                    a.nav-link.text-uppercase.text-center(href="#") Особенности
-                    a.nav-link.text-uppercase.text-center(href="#") Поддержка
-                    a.nav-link.text-uppercase.text-center(href="#") Магазин
-                    a.nav-link.text-uppercase.text-center(href="#") Профиль
-        //- v2
-        div#navbar.navbar.navbar-expand-sm
-            .container
-                a.navbar-brand.d-none.d-lg-block(href="/"): img(src=require("assets/logo/logo-white.png"))
+                a.navbar-brand.d-none.d-lg-block(href="/")
                 .col.navbar-nav.font-header
                     a.nav-link.text-uppercase.text-center(href="/") Новости
                     a.nav-link.text-uppercase.text-center(href="#") Форум
@@ -29,7 +18,7 @@ block body
                     a.nav-link.text-uppercase.text-center(href="#") Магазин
                     a.nav-link.text-uppercase.text-center(href="#") Профиль
       
-        div.container.main-block.bg-tea
+        div.container.main-block
             .row.no-gutters: .col-sm-12.text-center
                 a#btn-play.font-header.text-uppercase(href="#")
                 
@@ -59,14 +48,14 @@ block body
             div#content.row.no-gutters
                 div#news.col-sm-9
                     div.col-sm-12.h-100
-                        div.bg-block.h-100
+                        div.block.bg-container.border-container.h-100
                             
                 div#sidebar.col-sm-3
                     div.col-sm-12.h-100
-                        div.bg-block.h-100
+                        div.block.h-100
           
             div#footer.row.no-gutters
                 div.col-sm-12
                     div.h-100.col-sm-12
-                        div.bg-block.h-100
+                        div.block.bg-container.border-container.h-100
         

@@ -1,3 +1,5 @@
+$root = "../../"
+
 .font-header
     font-family "TrajanPro3-Regular"
     color #f7f8f8
@@ -10,11 +12,47 @@
         font-size 15px
         font-family "TrajanPro3-Regular"
 
-    .navbar-brand > img
+    .navbar-brand
+        display block
         width 88px
         height 76px
+        background-image url($root+"assets/logo/logo-white.png")
+        background-size 100%
+
+        &:hover
+            background-image url($root+"assets/logo/logo-moon.png")
+
 
     .nav-link
         flex-grow 1
         float left
         color inherit
+
+// --- backgrounds ---
+.bg-container
+    background-image linear-gradient(to bottom, rgba(#ffffff, 0.45) 0%, rgba(#ffffff, 0.45) 80%, rgba(#313436, 0) 100%)
+    background-repeat no-repeat
+
+.border-container
+    position relative
+    border-top 2px solid rgba(white, 0.8)
+    // border-left 2px solid linear-gradient(to bottom, rgba(#ffffff, 0.45) 0%, rgba(#313436, 0) 100px)
+
+    &:before, &:after
+        background-image linear-gradient(to bottom, rgba(white, 0.6) 0%, rgba(#313436, 0) 180px)
+
+    &:before
+        content ""
+        position absolute
+        top -2px
+        left 0
+        width 2px
+        bottom 0
+
+    &:after
+        content ""
+        position absolute
+        top -2px
+        right 0
+        width 2px
+        bottom 0
