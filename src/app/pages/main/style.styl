@@ -24,15 +24,19 @@ $root = "../../../"
     padding 15px 0
 
 #btn-play
-    sprite("./assets/btn-play.png", 1, 3, 1)
     display inline-block
     margin-top -15px
+    sprite("./assets/btn-play.png", 1, 3, 1)
+    width 522px
+    height 129px
+    // width 534px * 0.8
+    // height 135px * 0.8
 
     &:hover
-        sprite("./assets/btn-play.png", 1, 3, 2)
+        spriteFrame(1, 3, 2)
 
     &:active
-        sprite("./assets/btn-play.png", 1, 3, 3)
+        spriteFrame(1, 3, 3)
         transform translateY(2px)
 
 #carousel
