@@ -40,16 +40,48 @@ $root = "../../../"
         transform translateY(2px)
 
 #carousel
-    height calc(100vh - 240px)
+    height calc(100vh - 260px)
+
+#carousel-footer
+    position absolute
+    bottom 0
+    padding-left 30px
+    text-shadow 2px 1px 3px black
+    color #ffffff
+    font-family "TrajanPro3-Regular"
+    font-size 46px
+    line-height 54.25px
+    letter-spacing -1.9px
+
+    .text-1
+        padding-left 18px
+        color #fbf6e5
+        font-size 60px
+        letter-spacing -2.14px
+
+    .text-2
+        color #f1dda3
+
+
 
 #content
-    margin-top 15px
+    margin-top 60px
     height 150vh
     // min-height 1000px
 
 #news
-    .block
-        background-image linear-gradient(to bottom, rgba(#ffffff, 0.45) 0%, rgba(#ffffff, 0.45) 80%, rgba(#313436, 0) 100%)
+    .panel
+        background-image linear-gradient(to bottom, rgba(#ffffff, 0.3) 0%, rgba(#ffffff, 0.3) 80%, rgba(#313436, 0) 100%)
+
+    .news__header
+        text-shadow 0 0 5px white, 0 0 5px white, 0 0 2px white
+        color #000000
+        font-family "TrajanPro3-Regular"
+        font-size 30px
+        font-weight 400
+        line-height 55.49px
+        letter-spacing -1.21px
+
 
 #sidebar
     .sidebar-item
@@ -65,6 +97,8 @@ $root = "../../../"
 
         &_link
             transition all ease 0.2s
+            // box-shadow 1px 1px 2px 0.5px rgba(black, 0.7)
+            box-shadow 3px 3px 7px 0.5px rgba(black, 0.7)
 
             & > img
                 width 100%
@@ -72,7 +106,7 @@ $root = "../../../"
 
             &:hover
                 transform scale(1.05)
-                box-shadow rgba(black, 0.7) 1px 1px 15px 0.5px
+                box-shadow 2px 2px 15px 0.5px rgba(black, 0.7)
 
 
 

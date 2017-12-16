@@ -21,30 +21,33 @@ block body
                         .carousel-inner
                             each item, i in data.carouselItems
                                 .carousel-item.h-100.text-center(class=`${i==0 ? 'active' : ''}`)
-                                    img.h-100(class=`bg-${i}` src=item.img)
+                                    img.h-100(src=item.img)
 
                         .carousel-controls
                             a.carousel-control-prev(href="#carousel" role="button" data-slide="prev")
                                 span.carousel-control-prev-icon(aria-hidden="true")
                             a.carousel-control-next(href="#carousel" role="button" data-slide="next")
                                 span.carousel-control-next-icon(aria-hidden="true")
-                        ol.carousel-indicators
+                        //- ol.carousel-indicators
                             each item, i in data.carouselItems
                                 li(class=`${i==0 ? 'active' : ''}` data-target="#carousel" data-slide-to=i)
                                     
                     div#carousel-footer
-                        span.text-1 TESV: Skyrim -
-                        span.text-2 Теперь в многопользовательском режиме
+                        div.text-1 TESV: Skyrim -
+                        div.text-2 Теперь в многопользовательском режиме
                             
                             
             div#content.row.no-gutters
-                div#news.col-sm-9
+                div#news.col-sm-9.h-100
                     div.col-sm-12.h-100
-                        div.block.bg-panel-big.border-panel.border-panel_big.h-100
+                        div.panel.bg-panel-big.border-panel.border-panel_big.h-100
+                            h3.news__header.text-center.text-uppercase Новости
+                            
+                            
                             
                 div#sidebar.col-sm-3
-                    div.col-sm-12.h-100
-                        div.block.h-100
+                    div.col-sm-12
+                        div.panel
                             div#server-status.border-panel.text-center
                                 //- span.status-text.text-success Онлайн
                                 span.status-text.text-warning В разработке
