@@ -23,6 +23,7 @@ function chunksSortOrder(chunks) {
 }
 
 // env variables
+process.env.WEBPACK = true;
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 function isDev() { return process.env.NODE_ENV == 'development' }
 function isProd() { return process.env.NODE_ENV == 'production' }

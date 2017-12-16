@@ -1,0 +1,15 @@
+- var _data = require('./_data');
+div#navbar.navbar.navbar-expand-sm
+    .container
+        a.navbar-brand.d-none.d-lg-block(href="/")
+        //- .col.navbar-nav.font-header
+            a.nav-link.text-uppercase.text-center(href="/") Новости
+            a.nav-link.text-uppercase.text-center(href="#forum") Форум
+            a.nav-link.text-uppercase.text-center(href="#hmm") Особенности
+            a.nav-link.text-uppercase.text-center(href="#support") Поддержка
+            a.nav-link.text-uppercase.text-center(href="#shop") Магазин
+            a.nav-link.text-uppercase.text-center(href="#profile") Профиль
+
+        .col.navbar-nav.font-header
+            each item, i in _data.menu
+                a.nav-link.text-uppercase.text-center(data-route-name=item.name href=item.url) #{item.title}
