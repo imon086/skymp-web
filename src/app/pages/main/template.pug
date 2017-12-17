@@ -1,9 +1,8 @@
 extends ../../layout.pug
 
 block body
-    - var data = require('./_data');
-    if process.env.WEBPACK
-        h1 HOHOHOH
+    if !data
+        - var data = require('./_data');
     
     div#main
         div.bg-top
@@ -43,16 +42,16 @@ block body
                 div#articles.col-sm-9.d-flex
                     div.panel.border-grad-down
                         h2.text-center.text-uppercase.mb-0 Новости
-                        each item in [{id: 0}, {id: 1}, {id: 2}]
+                        each item in data.articles
                             div.col-sm-12.articles__item(id=`article-${item.id}` data-item-id="1")
                                 h4.item-header.bg-grad-right.border-grad-right
                                     span.date 01.01.2018
-                                    span.ml-3 AT VIN TA!
+                                    span.ml-3 #{item.title}
                                 div.item-body.col-sm-12
-                                    div(data-content="lead").item-lead
-                                        p На просторах SkyMP вы сможете стать кем угодно, избрать любой путь! Нам было бы интересно узнать: кем бы вы хотели стать? Какую дорогу вы выберете? 
-                                    div(data-content="fullText").item-full-text.collapse
-                                        p P.S. Скоро будет еще информация о прогрессе работы, ждите ;)
+                                    div(data-content="lead").item-lead #{item.lead}
+                                        //- p На просторах SkyMP вы сможете стать кем угодно, избрать любой путь! Нам было бы интересно узнать: кем бы вы хотели стать? Какую дорогу вы выберете? 
+                                    div(data-content="fullText").item-full-text.collapse #{item.fullText}
+                                        //- p P.S. Скоро будет еще информация о прогрессе работы, ждите ;)
                                 div.item-footer.text-center
                                     a.item-more.bg-grad-center.border-grad-center(data-toggle="collapse" data-target=`#article-${item.id} .collapse`) Подробнее 
                                     

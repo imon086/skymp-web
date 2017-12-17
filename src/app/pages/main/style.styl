@@ -84,6 +84,7 @@ $root = "../../../"
     min-height 100%
 
     .panel
+        width 100%
         background-image linear-gradient(to bottom, rgba(white, 0.3) 0%, rgba(white, 0.3) 80%, rgba(white, 0) 100%)
 
         &.border-grad-down
@@ -97,7 +98,7 @@ $root = "../../../"
 
     .articles__item
         margin 15px 0
-        
+
         .item-header
             display inline-block
             margin-left -15px
@@ -137,9 +138,21 @@ $root = "../../../"
 
 #sidebar
     .sidebar-item
+        position relative
         display block
         width 100%
         margin 15px 0
+
+        &:after
+            content ''
+            position absolute
+            top: -14px;
+            left: -9px;
+            right: -6px;
+            bottom 0
+            background-image url("./assets/frame-right-img.png")
+            background-size 100%
+            background-repeat no-repeat
 
         &:first
             margin-top 0
