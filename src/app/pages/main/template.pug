@@ -3,7 +3,7 @@ extends ../../layout.pug
 block body
     - var data = require('./_data');
     
-    div#viewport
+    div#main
         div.bg-top
             img(src=require("assets/images/bg-stars.png") width="100%" height="auto")
         div.bg-bottom
@@ -15,7 +15,7 @@ block body
             .row.no-gutters: .col-sm-12.text-center
                 a#btn-play.font-header.text-uppercase(href="#")
                 
-            div#header.row.no-gutters
+            div#header.row
                 div.col-sm-12
                     div#carousel.carousel.slide(data-ride="carousel")
                         .carousel-inner
@@ -37,27 +37,43 @@ block body
                         div.text-2 Теперь в многопользовательском режиме
                             
                             
-            div#content.row.no-gutters
+            div#content.row
                 div#news.col-sm-9.h-100
-                    div.col-sm-12.h-100
-                        div.panel.bg-panel-big.border-panel.border-panel_big.h-100
-                            h3.news__header.text-center.text-uppercase Новости
-                            
+                    div.panel.bg-panel-big.border-panel.border-panel_big.h-100
+                        h2.text-center.text-uppercase Новости
                             
                             
                 div#sidebar.col-sm-3
-                    div.col-sm-12
-                        div.panel
-                            div#server-status.border-panel.text-center
-                                //- span.status-text.text-success Онлайн
-                                span.status-text.text-warning В разработке
-                            
-                            each item, i in data.sidebarLinks
-                                a.sidebar-item.sidebar-item_link(href=item.url): img(src=item.img)
+                    div.panel
+                        div#server-status.border-panel.text-center
+                            //- span.status-text.text-success Онлайн
+                            span.status-text.text-warning В разработке
+                        
+                        each item, i in data.sidebarLinks
+                            a.sidebar-item.sidebar-item_link(href=item.url): img(src=item.img)
                                 
           
-            div#footer.row.no-gutters
+            div#footer.row
                 div.col-sm-12
-                    div.h-100.col-sm-12
-                        div.block.bg-panel.border-panel.h-100
+                    div.row.panel.bg-panel.border-panel.mx-0.pb-1
+                        div.col-sm-10
+                            h3.text-uppercase.text-center Наши партнёры
+                            div.partners
+                                a(href="https://vk.com/" target="_blank"): img(src=require("assets/logo/sid.png"))
+                                a(href="https://vk.com/" target="_blank"): img(src=require("assets/logo/sirius.png"))
+                                
+                        div.col-sm-2
+                            h3.text-uppercase Обратная связь
+                            div.contacts
+                                a(href="mailto:miroslav@skymp.ru?body=Привет!") miroslav@skymp.ru
+                                br
+                                a(href="mailto:pospelov@skymp.ru?body=Привет!") pospelov@skymp.ru
+                            
+                            h3.text-uppercase.mt-2 Мы в соцсетях
+                            div.socials
+                                a.pr-2(href="https://vk.com/" target="_blank"): i.fa.fa-vk
+                                a.px-2(href="https://youtube.com/" target="_blank"): i.fa.fa-youtube-play
+                            
+                            
+                            
         

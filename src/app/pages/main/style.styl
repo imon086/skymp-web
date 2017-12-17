@@ -1,12 +1,25 @@
 $root = "../../../"
 @require $root + "app/utils.styl"
 
-#viewport
+#main
     position relative
     background url($root + "assets/images/bg-clouds.png")
     background-repeat repeat
     background-position-x -100px
-      // perspective 1px
+    // perspective 1px
+
+    h2
+        font-family "TrajanPro3-Regular"
+        font-weight bolder
+        font-size 30px
+        line-height 55.49px
+
+    h3
+        font-family "TrajanPro3-Regular"
+        font-weight bolder
+        font-size 17px
+        line-height 32px
+
 
 .bg-top
     position absolute
@@ -66,20 +79,14 @@ $root = "../../../"
 
 #content
     margin-top 60px
-    height 150vh
-    // min-height 1000px
 
 #news
     .panel
         background-image linear-gradient(to bottom, rgba(#ffffff, 0.3) 0%, rgba(#ffffff, 0.3) 80%, rgba(#313436, 0) 100%)
 
-    .news__header
+    h2
         text-shadow 0 0 5px white, 0 0 5px white, 0 0 2px white
         color #000000
-        font-family "TrajanPro3-Regular"
-        font-size 30px
-        font-weight 400
-        line-height 55.49px
         letter-spacing -1.21px
 
 
@@ -125,8 +132,6 @@ $root = "../../../"
 
 #footer
     margin-top 15px
-    height 100px
-    // min-height 100px
 
     .bg-panel
         background-image linear-gradient(to bottom, rgba(#ffffff, 0.45) 0%, rgba(#313436, 0) 100%)
@@ -134,3 +139,30 @@ $root = "../../../"
     .border-panel
         &:before, &:after
             background-image linear-gradient(to bottom, rgba(white, 0.6) 0%, rgba(#313436, 0) 100%)
+
+    h3
+        color #101616
+        letter-spacing -1.37px
+        margin-bottom 0
+
+    .contacts
+        text-shadow 2px 2px 3px rgba(10, 19, 19, 0.57)
+        color #f7f8f8
+        // font-family "Times New Roman PSMT"
+        font-size 17px
+
+    .socials
+        font-size 35px
+        line-height 35px
+        margin-top -0.1em //?
+
+    i.fa
+        transition color ease 0.5s
+
+        &.fa-vk
+            font-size 1.15em
+
+        &.fa-vk:hover
+            color #45668e
+        &.fa-youtube-play:hover
+            color #ff0000
