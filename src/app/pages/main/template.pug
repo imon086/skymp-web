@@ -2,6 +2,8 @@ extends ../../layout.pug
 
 block body
     - var data = require('./_data');
+    if process.env.WEBPACK
+        h1 HOHOHOH
     
     div#main
         div.bg-top
@@ -38,14 +40,26 @@ block body
                             
                             
             div#content.row
-                div#news.col-sm-9.h-100
-                    div.panel.bg-panel-big.border-panel.border-panel_big.h-100
-                        h2.text-center.text-uppercase Новости
-                            
+                div#articles.col-sm-9.d-flex
+                    div.panel.border-grad-down
+                        h2.text-center.text-uppercase.mb-0 Новости
+                        each item in [{id: 0}, {id: 1}, {id: 2}]
+                            div.col-sm-12.articles__item(id=`article-${item.id}` data-item-id="1")
+                                h4.item-header.bg-grad-right.border-grad-right
+                                    span.date 01.01.2018
+                                    span.ml-3 AT VIN TA!
+                                div.item-body.col-sm-12
+                                    div(data-content="lead").item-lead
+                                        p На просторах SkyMP вы сможете стать кем угодно, избрать любой путь! Нам было бы интересно узнать: кем бы вы хотели стать? Какую дорогу вы выберете? 
+                                    div(data-content="fullText").item-full-text.collapse
+                                        p P.S. Скоро будет еще информация о прогрессе работы, ждите ;)
+                                div.item-footer.text-center
+                                    a.item-more.bg-grad-center.border-grad-center(data-toggle="collapse" data-target=`#article-${item.id} .collapse`) Подробнее 
+                                    
                             
                 div#sidebar.col-sm-3
                     div.panel
-                        div#server-status.border-panel.text-center
+                        div#server-status.border-grad-down.text-center
                             //- span.status-text.text-success Онлайн
                             span.status-text.text-warning В разработке
                         
@@ -55,24 +69,25 @@ block body
           
             div#footer.row
                 div.col-sm-12
-                    div.row.panel.bg-panel.border-panel.mx-0.pb-1
-                        div.col-sm-9
+                    div.row.panel.bg-grad-down.border-grad-down.mx-0.pb-1
+                        div.col-sm-9.col-xs-6
                             h3.text-uppercase.text-center Наши партнёры
                             div.partners
                                 a(href="https://vk.com/" target="_blank"): img(src=require("assets/logo/sid.png"))
                                 a(href="https://vk.com/" target="_blank"): img(src=require("assets/logo/sirius.png"))
                                 
-                        div.col-sm-3
-                            h3.text-uppercase Обратная связь
-                            div.contacts
-                                a(href="mailto:miroslav@skymp.ru?body=Привет!") miroslav@skymp.ru
-                                br
-                                a(href="mailto:pospelov@skymp.ru?body=Привет!") pospelov@skymp.ru
-                            
-                            h3.text-uppercase.mt-2 Мы в соцсетях
-                            div.socials
-                                a.pr-2(href="https://vk.com/" target="_blank"): i.fa.fa-vk
-                                a.px-2(href="https://youtube.com/" target="_blank"): i.fa.fa-youtube-play
+                        div.col-sm-3.col-xs-6.text-center
+                            div.d-inline-block.text-left
+                                h3.text-uppercase Обратная связь
+                                div.contacts
+                                    a(href="mailto:miroslav@skymp.ru?body=Привет!") miroslav@skymp.ru
+                                    br
+                                    a(href="mailto:pospelov@skymp.ru?body=Привет!") pospelov@skymp.ru
+                                
+                                h3.text-uppercase.mt-2 Мы в соцсетях
+                                div.socials
+                                    a.pr-2(href="https://vk.com/" target="_blank"): i.fa.fa-vk
+                                    a.px-2(href="https://youtube.com/" target="_blank"): i.fa.fa-youtube-play
                             
                             
                             

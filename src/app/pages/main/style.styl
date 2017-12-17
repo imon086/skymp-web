@@ -80,14 +80,59 @@ $root = "../../../"
 #content
     margin-top 60px
 
-#news
+#articles
+    min-height 100%
+
     .panel
-        background-image linear-gradient(to bottom, rgba(#ffffff, 0.3) 0%, rgba(#ffffff, 0.3) 80%, rgba(#313436, 0) 100%)
+        background-image linear-gradient(to bottom, rgba(white, 0.3) 0%, rgba(white, 0.3) 80%, rgba(white, 0) 100%)
+
+        &.border-grad-down
+            &:before, &:after
+                height 200px
 
     h2
         text-shadow 0 0 5px white, 0 0 5px white, 0 0 2px white
         color #000000
         letter-spacing -1.21px
+
+    .articles__item
+        margin 15px 0
+        
+        .item-header
+            display inline-block
+            margin-left -15px
+            padding 1px 15px
+            // background-image linear-gradient(to right, rgba(#ffffff, 0.7) 0%, rgba(#ffffff, 0.7) 10%, rgba(#313436, 0) 100%)
+            text-shadow 0 0 5px white
+            color #2e3339
+            font-family Aniron
+            font-size 15px
+            font-weight bold
+            line-height 23.89px
+            letter-spacing -0.61px
+
+            .date
+                font-size 19px
+                letter-spacing -0.77px
+
+        .item-body
+            color #161c21
+            font-size 16px
+            line-height 27px
+
+        .item-footer
+            .item-more
+                padding 3px 30px
+                color black
+                font-size 17px
+                line-height 25.07px
+                cursor pointer
+
+                &:before, &:after
+                    transition all ease 0.2s
+
+                &:hover:before, &:hover:after
+                    opacity 0.3
 
 
 #sidebar
@@ -124,7 +169,7 @@ $root = "../../../"
 
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     color: #3bef54;
-    // font-family: Aniron;
+    font-family: Aniron;
     font-size: 15px;
     font-weight: 700;
     letter-spacing: -0.61px;
