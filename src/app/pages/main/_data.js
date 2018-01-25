@@ -23,5 +23,5 @@ for (let i=1; i <5; i++) {
         title: 'Title '+i,
         lead: 'Lead '+i,
         fullText: 'Full text '+i
-    })
+    });
 }

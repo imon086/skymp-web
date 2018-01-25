@@ -33,8 +33,9 @@ $root = "../../../"
     left 0
     width 100%
 
-.main-block
+main
     padding 15px 0
+    margin-top 60px
 
 #btn-play
     display inline-block
@@ -76,14 +77,11 @@ $root = "../../../"
         color #f1dda3
 
 
-
-#content
-    margin-top 60px
-
 #articles
     min-height 100%
 
     .panel
+        min-height 100%
         width 100%
         background-image linear-gradient(to bottom, rgba(white, 0.3) 0%, rgba(white, 0.3) 80%, rgba(white, 0) 100%)
 
@@ -96,10 +94,10 @@ $root = "../../../"
         color #000000
         letter-spacing -1.21px
 
-    .articles__item
+    article
         margin 15px 0
 
-        .item-header
+        .article-header
             display inline-block
             margin-left -15px
             padding 1px 15px
@@ -116,13 +114,13 @@ $root = "../../../"
                 font-size 19px
                 letter-spacing -0.77px
 
-        .item-body
+        .article-body
             color #161c21
             font-size 16px
             line-height 27px
 
-        .item-footer
-            .item-more
+        .article-footer
+            .article-more
                 padding 3px 30px
                 color black
                 font-size 17px
@@ -174,7 +172,6 @@ $root = "../../../"
                 box-shadow 2px 2px 15px 0.5px rgba(black, 0.7)
 
 
-
 #server-status
     background rgba(white, 0.5)
     padding 15px
@@ -186,41 +183,3 @@ $root = "../../../"
     font-size: 15px;
     font-weight: 700;
     letter-spacing: -0.61px;
-
-
-#footer
-    margin-top 15px
-
-    .bg-panel
-        background-image linear-gradient(to bottom, rgba(#ffffff, 0.45) 0%, rgba(#313436, 0) 100%)
-
-    .border-panel
-        &:before, &:after
-            background-image linear-gradient(to bottom, rgba(white, 0.6) 0%, rgba(#313436, 0) 100%)
-
-    h3
-        color #101616
-        letter-spacing -1.37px
-        margin-bottom 0
-
-    .contacts
-        text-shadow 2px 2px 3px rgba(10, 19, 19, 0.57)
-        color #f7f8f8
-        // font-family "Times New Roman PSMT"
-        font-size 17px
-
-    .socials
-        font-size 35px
-        line-height 35px
-        margin-top -0.1em //?
-
-    i.fa
-        transition color ease 0.5s
-
-        &.fa-vk
-            font-size 1.15em
-
-        &.fa-vk:hover
-            color #45668e
-        &.fa-youtube-play:hover
-            color #ff0000
