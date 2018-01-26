@@ -22,7 +22,7 @@ block body
                         .carousel-inner
                             each item, i in data.carouselItems
                                 .carousel-item.h-100.text-center(class=`${i==0 ? 'active' : ''}`)
-                                    img.h-100(src=item.img)
+                                    img(src=item.img)
 
                         .carousel-controls
                             a.carousel-control-prev(href="#carousel" role="button" data-slide="prev")
