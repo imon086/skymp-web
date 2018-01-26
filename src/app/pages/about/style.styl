@@ -1,0 +1,56 @@
+$root = "../../../"
+@require $root + "app/utils.styl"
+
+#about
+    position relative
+    background url($root + "assets/images/bg-clouds.png")
+    background-repeat repeat
+    background-position-x -100px
+    // perspective 1px
+
+    h2
+        font-family "Trajan Pro 3"
+        font-weight bolder
+        font-size 30px
+        line-height 55.49px
+
+    h3
+        font-family "Trajan Pro 3"
+        font-weight bolder
+        font-size 17px
+        line-height 32px
+
+// -- slides --
+#begin
+    h1
+        color #efd997
+        font-family "Trajan Pro 3"
+        font-size 64px
+        font-weight 600
+        line-height 54.25px
+        letter-spacing -2.28px
+
+    h1.bg-clip-text
+        background-image linear-gradient(to top, rgba(229, 195, 90, 1) 0%, rgba(255, 255, 255, 1) 100%)
+
+    h1 + img
+        max-width 100%
+
+
+    img.slide-preview-icon
+        max-width 100%
+
+
+    // --- with shadow
+    // h1
+    //     text-shadow 1px 2px 3px rgba(0, 0, 0, 1)
+    //     display inline-block
+    //     position relative
+    //
+    //     .bg-clip-text
+    //         position absolute
+    //         top 0
+    //         left 0
+    //
+    //         text-shadow none
+    //         background-image linear-gradient(to top, rgba(229, 195, 90, 1) 0%, rgba(255, 255, 255, 1) 100%)

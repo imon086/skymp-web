@@ -7,6 +7,24 @@ $root = "../../"
 .font-trajan
     font-family "Trajan Pro 3"
 
+// --- page backgrounds ---
+.bg-top
+    position absolute
+    top 0
+    left 0
+    width 100%
+
+.bg-bottom
+    position absolute
+    bottom 0
+    left 0
+    width 100%
+
+// --- bg clip ---
+.bg-clip-text, .bg-clip-text-after:after, .bg-clip-text-before:before
+    -webkit-background-clip text
+    -webkit-text-fill-color transparent
+
 // --- gradients ---
 .bg-grad-down
     background-image linear-gradient(to bottom, rgba(white, 0.4) 0%, rgba(white, 0) 100%)

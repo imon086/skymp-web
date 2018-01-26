@@ -16,6 +16,9 @@ a, a:hover, a:active
     color: inherit
     // text-decoration: underline
 
+main
+    min-height 100%
+
 .ru-quotes
     &:before
         content: '“'
@@ -30,7 +33,13 @@ a, a:hover, a:active
     &:after
         content: ' '
 
+
 .vertical-center
+    display: flex
+    align-items: center
+    height: 100%
+
+.vertical-center-table
     display table
 
     .align-item
@@ -38,10 +47,9 @@ a, a:hover, a:active
         height 100%
         vertical-align middle
 
-.vertical-center-flex
-    display: flex
-    align-items: center
-    height: 100%
+img.size-contains
+    max-width 100%
+    max-height 100%
 
 // --- bacgrounds ---
 for i in (0..10)

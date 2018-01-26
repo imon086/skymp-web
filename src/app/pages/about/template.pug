@@ -1,0 +1,38 @@
+extends ../../layout.pug
+
+block body
+    if !data
+        - var data = require('./_data');
+    
+    div#about
+        div.bg-top
+            img(src=require("assets/images/bg-stars.png") width="100%" height="auto")
+        div.bg-bottom
+            img(src=require("assets/images/bg-main.png") width="100%" height="auto")
+        
+        include ../../components/navbar/template.pug
+
+        main.container
+            div#begin
+                div.row: .col-12.text-center
+                    h1.bg-clip-text особенности проекта
+                    img(src=require('./assets/begin-header.png'))
+                        
+                div.row
+                    //- for item in ['newbie', 'speech', 'pickpocket', 'craft', 'sword']
+                    .col-sm-3.text-center
+                        img.slide-preview-icon(src=require('./assets/begin-img/newbie.png'))
+                        div.slide-preview-text Навигация новичка
+                    .col-sm-3.text-center
+                        img.slide-preview-icon(src=require('./assets/begin-img/speech.png'))
+                        div.slide-preview-text Навигация новичка
+                    .col-sm-3.text-center
+                        img.slide-preview-icon(src=require('./assets/begin-img/pickpocket.png'))
+                        div.slide-preview-text Навигация новичка
+                    .col-sm-3.text-center
+                        img.slide-preview-icon(src=require('./assets/begin-img/craft.png'))
+                        div.slide-preview-text Навигация новичка
+                    
+                
+                                
+        include ../../components/footer/template.pug

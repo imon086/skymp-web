@@ -45,6 +45,7 @@ module.exports = {
     watch: flags.watch,
     entry: {
         main: `app/pages/main/index.js`,
+        about: `app/pages/about/index.js`,
     },
     output: {
         path: path.resolve(__dirname, cfg.path.build),
@@ -110,6 +111,13 @@ module.exports = {
             template: 'app/pages/main/template.pug',
             inject: 'head',
             chunksSortMode: chunksSortOrder(['vendor', 'main']),
+        }),
+
+        new HtmlWebpackPlugin({
+            filename: 'about.html',
+            template: 'app/pages/about/template.pug',
+            inject: 'head',
+            chunksSortMode: chunksSortOrder(['vendor', 'about']),
         }),
 
         new webpack.optimize.CommonsChunkPlugin({
