@@ -41,20 +41,39 @@ xl = 1200px
     h1 + img
         max-width 100%
 
+    .slide-preview
+        flex 1 1 auto
 
-    .slide-preview-icon
-        flex-grow 1
+        .animated
+            transition all ease 0.3s
 
-        & > img
-            max-width 100%
+        .slide-preview-icon
+            flex-grow 1
 
-    .slide-preview-text
-        text-shadow 1px 3px 5px rgba(0, 0, 0, 1)
-        color #fdfaf1
-        font-family "Trajan Pro 3"
-        font-size 24px
-        line-height 27.49px
-        letter-spacing -0.97px
+            & > img
+                max-width 100%
+
+            & > img.svg
+                filter drop-shadow(0 0 3px #fbd05a)
+
+        .slide-preview-text
+            text-shadow 1px 3px 5px rgba(0, 0, 0, 1)
+            color #fdfaf1
+            font-family "Trajan Pro 3"
+            font-size 24px
+            line-height 27.49px
+            letter-spacing -0.97px
+
+        &:hover
+            text-decoration none
+
+            img
+                filter drop-shadow(0 0 5px #fbd05a) !important
+
+            img.svg
+                filter drop-shadow(0 0 8px #fbd05a) !important
+
+
 
     .begin-description
         color #000

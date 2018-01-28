@@ -106,20 +106,6 @@ module.exports = {
 
         new webpack.HotModuleReplacementPlugin(),
 
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'app/pages/main/template.pug',
-            inject: 'head',
-            chunksSortMode: chunksSortOrder(['vendor', 'main']),
-        }),
-
-        new HtmlWebpackPlugin({
-            filename: 'about.html',
-            template: 'app/pages/about/template.pug',
-            inject: 'head',
-            chunksSortMode: chunksSortOrder(['vendor', 'about']),
-        }),
-
         new webpack.optimize.CommonsChunkPlugin({
             name: 'commons',
             filename: 'commons.js'
@@ -151,7 +137,21 @@ module.exports = {
            'window.jQuery': 'jquery',
            Popper: ['popper.js', 'default'],
            _: 'lodash',
-        })
+       }),
+
+       new HtmlWebpackPlugin({
+           filename: 'index.html',
+           template: 'app/pages/main/template.pug',
+           inject: 'head',
+           chunksSortMode: chunksSortOrder(['commons', 'main']),
+       }),
+
+       new HtmlWebpackPlugin({
+           filename: 'about.html',
+           template: 'app/pages/about/template.pug',
+           inject: 'head',
+           chunksSortMode: chunksSortOrder(['commons', 'about']),
+       })
     ]
 }
 
