@@ -4,7 +4,7 @@ block body
     if !data
         - var data = require('./_data');
     
-    div#about
+    div#about.layout
         div.bg-top
             img(src=require("assets/images/bg-stars.png") width="100%" height="auto")
         div.bg-bottom
@@ -18,21 +18,69 @@ block body
                     h1.bg-clip-text особенности проекта
                     img(src=require('./assets/begin-header.png'))
                         
-                div.row
-                    //- for item in ['newbie', 'speech', 'pickpocket', 'craft', 'sword']
-                    .col-sm-3.text-center
-                        img.slide-preview-icon(src=require('./assets/begin-img/newbie.png'))
-                        div.slide-preview-text Навигация новичка
-                    .col-sm-3.text-center
-                        img.slide-preview-icon(src=require('./assets/begin-img/speech.png'))
-                        div.slide-preview-text Навигация новичка
-                    .col-sm-3.text-center
-                        img.slide-preview-icon(src=require('./assets/begin-img/pickpocket.png'))
-                        div.slide-preview-text Навигация новичка
-                    .col-sm-3.text-center
-                        img.slide-preview-icon(src=require('./assets/begin-img/craft.png'))
-                        div.slide-preview-text Навигация новичка
-                    
+                div.row.my-4
+                    .col-sm-3.d-flex
+                        a.slide-preview.d-flex(href="#")
+                            div.text-center.d-flex.flex-column.justify-content-end
+                                div.slide-preview-icon.d-flex.justify-content-center.align-items-center
+                                    img.my-1(src=require('./assets/begin-img/newbie.png'))
+                                div.slide-preview-text Навигация новичка
+                    .col-sm-3.d-flex
+                        a.slide-preview.d-flex(href="#")
+                            div.text-center.d-flex.flex-column.justify-content-end
+                                div.slide-preview-icon.d-flex.justify-content-center.align-items-center
+                                    img.my-1(src=require('./assets/begin-img/speech.png'))
+                                div.slide-preview-text Фракции и гильдии
+                    .col-sm-3.d-flex
+                        a.slide-preview.d-flex(href="#")
+                            div.text-center.d-flex.flex-column.justify-content-end
+                                div.slide-preview-icon.d-flex.justify-content-center.align-items-center
+                                    img.my-1(src=require('./assets/begin-img/pickpocket.png'))
+                                div.slide-preview-text Экономика и торговля
+                    .col-sm-3.d-flex
+                        a.slide-preview.d-flex(href="#")
+                            div.text-center.d-flex.flex-column.justify-content-end
+                                div.slide-preview-icon.d-flex.justify-content-center.align-items-center
+                                    img.my-1(src=require('./assets/begin-img/craft.png'))
+                                div.slide-preview-text Создание предметов
+                        
+                div.row.my-4.justify-content-center
+                    .col-sm-3.d-flex
+                        a.slide-preview.d-flex(href="#")
+                            div.text-center.d-flex.flex-column.justify-content-end
+                                div.slide-preview-icon.d-flex.justify-content-center.align-items-center
+                                    img.my-1(src=require('./assets/begin-img/sword.png'))
+                                div.slide-preview-text Система боя и навыков     
+                    .col-sm-3.d-flex
+                        a.slide-preview.d-flex(href="#")
+                            div.text-center.d-flex.flex-column.justify-content-end
+                                div.slide-preview-icon.d-flex.justify-content-center.align-items-center
+                                    img.my-1(src=require('./assets/begin-img/fractions.png'))
+                                div.slide-preview-text Гражданская война
+                    .col-sm-3.d-flex
+                        a.slide-preview.d-flex(href="#")
+                            div.text-center.d-flex.flex-column.justify-content-end
+                                div.slide-preview-icon.d-flex.justify-content-center.align-items-center
+                                    img.my-1(src=require('./assets/begin-img/mage.png'))
+                                div.slide-preview-text Магия и её изучение
+                            
+                div.row: .col-12.begin-description.text-center
+                    p.
+                        Признайтесь себе, что хоть раз, но вы мечтали об этом... 
+                        Побродить по Осеннему лесу, полюбоваться красотами 
+                        Моря Призраков, посмотреть на долину с высоты 
+                        <br>
+                        Глотки Мира - <em>вместе с друзьями!</em> 
+ 
+                    p.
+                        Теперь это стало возможным благодаря проекту SkyMP! 
+                    p.desc-3.
+                        Охотьтесь и торгуйтесь,творите и разрушайте, 
+                        примите участие в кровопролитной битве фракций.
+                        
+                div.row: .col-xl-10.offset-xl-1.col-sm-11.begin-description-2.bg-clip-text
+                    p Займите своё место в мире SkyMP и определите его судьбу!
+ 
                 
                                 
         include ../../components/footer/template.pug

@@ -1,6 +1,11 @@
 $root = "../../../"
 @require $root + "app/utils.styl"
 
+sm = 576px
+md = 768px
+lg = 992px
+xl = 1200px
+
 #about
     position relative
     background url($root + "assets/images/bg-clouds.png")
@@ -37,9 +42,49 @@ $root = "../../../"
         max-width 100%
 
 
-    img.slide-preview-icon
-        max-width 100%
+    .slide-preview-icon
+        flex-grow 1
 
+        & > img
+            max-width 100%
+
+    .slide-preview-text
+        text-shadow 1px 3px 5px rgba(0, 0, 0, 1)
+        color #fdfaf1
+        font-family "Trajan Pro 3"
+        font-size 24px
+        line-height 27.49px
+        letter-spacing -0.97px
+
+    .begin-description
+        color #000
+        opacity 0.9
+        font-family Aniron
+        font-size 26px
+        font-weight 700
+        text-shadow 0 0 15px rgba(255, 255, 255, 1)
+        letter-spacing -0.53px
+
+        em
+            font-style inherit
+            font-size 1.26em
+
+        & > p.desc-3
+            font-size 1.13em
+            letter-spacing -0.7px
+
+    .begin-description-2
+        color #fff
+        font-family Aniron
+        font-size 37px
+        font-weight 700
+        line-height 58.89px
+        text-align right
+        background-image linear-gradient(to top, rgba(229, 195, 90, 1) 0%, rgba(255, 255, 255, 1) 100%)
+        // text-shadow 3px 4px 3px rgba(0, 0, 0, 1)
+
+        @media screen and (max-width: xl - 0.02)
+            font-size 34px
 
     // --- with shadow
     // h1
