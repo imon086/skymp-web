@@ -42,10 +42,9 @@ xl = 1200px
         max-width 100%
 
     .slide-preview
+        $color = #ebe1c2
+        $color2 = #fbd05a
         flex 1 1 auto
-
-        .animated
-            transition all ease 0.3s
 
         .slide-preview-icon
             flex-grow 1
@@ -53,8 +52,8 @@ xl = 1200px
             & > img
                 max-width 100%
 
-            & > img.svg
-                filter drop-shadow(0 0 3px #fbd05a)
+            & > img.shadow
+                filter drop-shadow(0 0 1px $color) drop-shadow(0 0 1px $color) drop-shadow(0 0 1px $color) drop-shadow(0 0 1px $color) drop-shadow(0 0 1px $color)
 
         .slide-preview-text
             text-shadow 1px 3px 5px rgba(0, 0, 0, 1)
@@ -66,13 +65,17 @@ xl = 1200px
 
         &:hover
             text-decoration none
+            color $color2
 
-            img
-                filter drop-shadow(0 0 5px #fbd05a) !important
+            // img
+            //     filter drop-shadow(0 0 5px #fbd05a) !important
 
-            img.svg
-                filter drop-shadow(0 0 8px #fbd05a) !important
+            img.shadow
+                filter drop-shadow(0 0 1px $color) drop-shadow(0 0 1px $color) drop-shadow(0 0 1px $color)  drop-shadow(0 0 1px $color)  drop-shadow(0 0 5px $color2) !important
 
+            .slide-preview-text
+                // text-shadow 0 0 17px rgba(251, 208, 90, 0.69)
+                color $color2
 
 
     .begin-description
