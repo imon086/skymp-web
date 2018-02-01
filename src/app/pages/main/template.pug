@@ -26,9 +26,9 @@ block body
 
                         .carousel-controls
                             a.carousel-control-prev(href="#carousel" role="button" data-slide="prev")
-                                span.carousel-control-prev-icon(aria-hidden="true")
+                                img.animated(src=require('assets/icons/arrow-l.png'))
                             a.carousel-control-next(href="#carousel" role="button" data-slide="next")
-                                span.carousel-control-next-icon(aria-hidden="true")
+                                img.animated(src=require('assets/icons/arrow-r.png'))
                         //- ol.carousel-indicators
                             each item, i in data.carouselItems
                                 li(class=`${i==0 ? 'active' : ''}` data-target="#carousel" data-slide-to=i)

@@ -3,6 +3,7 @@ html(ng-app="app")
     head
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        
         //- meta(property="og:type" content="website")
         //- meta(property="og:url" content="http://allrussia.online")
         //- meta(property="og:title" content="\"РОССИЯ ОНЛАЙН\" — Красиво. Интерактивно. О стране.")
@@ -25,5 +26,10 @@ html(ng-app="app")
             title SkyMP
 
     body
+        //- div(style="position: absolute; background: #eee; z-index: 1000;")
+            code #{JSON.stringify(process, 4)}
+            for v, k in global
+                p: code #{k} #{v}
+
         block body
             div#viewport Loading...

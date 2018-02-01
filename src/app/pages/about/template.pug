@@ -12,54 +12,54 @@ block body
         
         include ../../components/navbar/template.pug
 
-        main.container
-            div#begin
+        main
+            section#begin.slide: .container
                 div.row: .col-12.text-center
-                    h1.bg-clip-text особенности проекта
+                    h1.bg-clip-text Особенности проекта
                     img(src=require('./assets/begin-header.png'))
                         
                 div.row.my-4.justify-content-center
                     .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#")
+                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#newbie")
                             div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/begin-img/newbie.svg'))
+                                img.animated.shadow.my-2(src=require('./assets/icons/newbie.svg'))
                             div.slide-preview-text.animated Навигация новичка
                             
                     .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#")
+                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#fractions")
                             div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/begin-img/speech.svg'))
+                                img.animated.shadow.my-2(src=require('./assets/icons/speech.svg'))
                             div.slide-preview-text.animated Фракции и гильдии
                             
                     .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#")
+                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#economics")
                             div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/begin-img/pickpocket.svg'))
+                                img.animated.shadow.my-2(src=require('./assets/icons/pickpocket.svg'))
                             div.slide-preview-text.animated Экономика и торговля
                             
                     .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#")
+                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#craft")
                             div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/begin-img/craft.svg'))
+                                img.animated.shadow.my-2(src=require('./assets/icons/craft.svg'))
                             div.slide-preview-text.animated Создание предметов
                         
                         
                     .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#")
+                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#skills")
                             div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/begin-img/sword.svg'))
+                                img.animated.shadow.my-2(src=require('./assets/icons/sword.svg'))
                             div.slide-preview-text.animated Система боя и навыков 
                                 
                     .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#")
+                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#war")
                             div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/begin-img/fractions.svg'))
+                                img.animated.shadow.my-2(src=require('./assets/icons/flags.svg'))
                             div.slide-preview-text.animated Гражданская война
                             
                     .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#")
+                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#magic")
                             div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/begin-img/mage.svg'))
+                                img.animated.shadow.my-2(src=require('./assets/icons/mage.svg'))
                             div.slide-preview-text.animated Магия и её изучение
                             
                             
@@ -80,6 +80,42 @@ block body
                 div.row: .col-xl-10.offset-xl-1.col-sm-11.begin-description-2.bg-clip-text
                     p Займите своё место в мире SkyMP и определите его судьбу!
  
-                
+            section#newbie.slide.pt-4: .container
+                .row: .col-12.d-flex.flex-column.align-items-stretch.justify-content-between
+                    h2.bg-clip-text.mt-2
+                        | Чем я могу заняться в 
+                        span.name SkyMP?
+                        
+                    div#newb-carousel.carousel.slide(data-ride="newb-carousel")
+                        .carousel-inner
+                            each item, i in data.newbieCarousel
+                                .carousel-item.px-4.__d-flex(class=`${i==0 ? 'active' : ''}`)
+                                    h3.d-flex.justify-content-between.align-items-center.text-uppercase
+                                        img.icon1(src=item.icon1)
+                                        span.text-center #{item.title}
+                                        img.icon2(src=item.icon2)
+                                    //- p.carousel-item-text.text-center.d-flex.flex-column.justify-content-between !{item.text}
+                                    div.carousel-item-text.text-center.d-flex.flex-column.justify-content-between
+                                        each text in item.text.split('\n')
+                                            p #{text}
+
+                        .carousel-controls
+                            a.carousel-control-prev(href="#newb-carousel" role="button" data-slide="prev")
+                                img.animated(src=require('assets/icons/arrow-l.png'))
+                            a.carousel-control-next(href="#newb-carousel" role="button" data-slide="next")
+                                img.animated(src=require('assets/icons/arrow-r.png'))
+                        
+                        ol.carousel-indicators.d-flex.justify-content-between.mt-2
+                            each item, i in data.newbieCarousel
+                                li.d-flex.flex-column.mx-3(class=`${i==0 ? 'active' : ''}` data-target="#newb-carousel" data-slide-to=i)
+                                    div.icon.d-flex.justify-content-center.animated
+                                        img.icon1(src=item.icon1)
+                                        img.icon2(src=item.icon2)
+                                    div.title.text-center.animated #{item.title}
+                                    
+                    div.newb-footer.bg-clip-text.mt-2
+                        div.text-left Ты способен стать кем угодно
+                        div.text-right в мире SkyMP!
+
                                 
         include ../../components/footer/template.pug
