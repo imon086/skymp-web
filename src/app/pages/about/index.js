@@ -3,6 +3,7 @@ import 'app/style.styl';
 
 import 'app/components/navbar';
 import 'app/components/footer';
+import 'app/components/tablist';
 
 import '../components.styl';
 import '../bootstrap.styl';
