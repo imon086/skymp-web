@@ -20,32 +20,20 @@ export default class Tablist {
         __tabs.removeClass('active');
         __panels.removeClass('show');
 
-        tabs[i].classList.add('active');
-        panels[i].classList.add('active');
-        setTimeout(() => {
+        var animationTime = parseCssTime(__panels.css('transition-duration'));
+        sleep(animationTime)
+        .then(() => {
             __panels.removeClass('active');
+        })
+        .then(() => {
+            tabs[i].classList.add('active');
+            panels[i].classList.add('active');
+            return sleep();
+        })
+        .then(() => {
             panels[i].classList.add('show');
-        }, 200);
-        // TODO: detect animation time
-    }
-
-    __select(i) {
-        if (i === this.selected) return;
-        var tabs = this.getTabs();
-        var panels = this.getPanels();
-        var panel;
-
-        this.selected = i;
-        tabs.each((_i, tab) => {
-            panel = panels.get(_i);
-            if (i === _i) {
-                tab.classList.add('active');
-                panel.classList.add('active', 'show');
-            } else {
-                tab.classList.remove('active');
-                panel.classList.remove('active', 'show');
-            }
-        });
+        })
+        ;
     }
 
     getTabs() {
@@ -64,3 +52,15 @@ $(() => {
         new Tablist(v);
     });
 });
+
+// utils
+function parseCssTime(t) {
+    if (!t) return 0;
+    return ~t.indexOf('ms') ? parseFloat(t) : parseFloat(t) * 1000;
+}
+
+function sleep(ms) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
+}
