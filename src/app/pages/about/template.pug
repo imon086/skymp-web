@@ -13,9 +13,9 @@ block body
         include ../../components/navbar/template.pug
 
         main
-            section#begin.slide: .container
+            section#begin.slide.pb-4: .container
                 div.row: .col-12.text-center
-                    h1.bg-clip-text Особенности проекта
+                    h1.slide-header.bg-clip-text Особенности проекта
                     img(src=require('./assets/begin-header.png'))
                         
                 div.row.my-4.justify-content-center
@@ -119,7 +119,7 @@ block body
 
             section#craft.slide.py-2: .container
                 .slide-inner.d-flex.flex-column.align-items-stretch.justify-content-between
-                    h2.bg-clip-text.text-center.mt-2 Создание и улучшение предметов
+                    h2.slide-header.bg-clip-text.text-center.mt-2 Создание и улучшение предметов
                     
                     div.craft-tabs.d-flex.flex-column(role="tablist")
                         ul.nav.d-flex.justify-content-center
@@ -132,7 +132,7 @@ block body
                         div.tab-content.d-flex
                             each item, i in data.craftItems
                                 div.tab-pane.d-flex.animated.fade(role="tabpanel")
-                                    div.tab-pane-inner.flex-1.d-flex.flex-column.justify-content-between.px-5
+                                    div.tab-pane-inner.flex-full.d-flex.flex-column.justify-content-between.px-5
                                         h3.text-center #{item.header}
                                         p.text-center.my-2 #{item.text}
                                         div.icons.d-flex.justify-content-between.align-items-end
