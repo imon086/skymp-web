@@ -97,6 +97,8 @@ $root = "../../../"
             font-weight bold
             line-height 23.89px
             letter-spacing -0.61px
+            // border-image linear-gradient(to right, rgba(white, 0.8) 0%, rgba(white, 0) 100%) 1
+            border-width 2px 0
 
             .date
                 font-size 19px
@@ -114,12 +116,10 @@ $root = "../../../"
                 font-size 17px
                 line-height 25.07px
                 cursor pointer
+                opacity 0.6
 
-                &:before, &:after
-                    transition all ease 0.2s
-
-                &:hover:before, &:hover:after
-                    opacity 0.3
+                &:hover
+                    opacity 1
 
 
 #sidebar
