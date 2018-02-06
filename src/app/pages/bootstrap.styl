@@ -11,3 +11,24 @@
 
         &:hover > img
             filter drop-shadow(0 0 4px #fff)
+
+
+.carousel.carousel-flex
+    display flex
+    flex-direction column
+
+    .carousel-inner
+        display flex
+        flex 1 1 auto
+
+    .carousel-item
+        // display flex
+        flex-direction column
+        flex 1 1 auto
+
+    .carousel-item.active
+        display flex
+
+    .carousel-item-next, .carousel-item-prev
+        display flex
+        min-height 100%
