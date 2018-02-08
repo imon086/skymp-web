@@ -5,6 +5,22 @@ section#fractions
         font-size 75px // 79
         line-height 2em
 
-        & > i.fa
-            display inline // must have for fa gradient
-            font-size 2em
+        // & > i.fa
+        //     display inline // must have for fa gradient
+        //     font-size 2em
+
+        & > i.icon
+            display inline-block
+            height 2em
+            width 1em
+            background-image linear-gradient(to top, #e5c35a 0%, #fff 100%)
+            -webkit-mask-image url('./assets/icons/speech.svg')
+            -webkit-mask-repeat no-repeat
+            -webkit-mask-size cover
+            mask-image url('./assets/icons/speech.svg')
+            mask-repeat no-repeat
+            mask-size cover
+
+            &:last-child
+                width 1.2em
+                -webkit-mask-position right
