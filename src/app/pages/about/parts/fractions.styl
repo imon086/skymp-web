@@ -1,13 +1,19 @@
 section#fractions
     background-image url($root+'assets/images/bg-fractions.png')
 
-    h2.section-header
+    .section-header
         font-size 75px // 79
         line-height 2em
+        filter drop-shadow(1px 2px 3px #000)
 
         // & > i.fa
         //     display inline // must have for fa gradient
         //     font-size 2em
+
+        & > h2
+            background-image linear-gradient(to top, #e5c35a 0%, #fff 100%)
+            font-size inherit
+            line-height inherit
 
         & > i.icon
             display inline-block
