@@ -13,55 +13,18 @@ block body
         include ../../components/navbar/template.pug
 
         main
-            section#begin.slide.pb-4: .container
+            section#begin.section.pb-4: .container
                 div.row: .col-12.text-center
-                    h1.slide-header.bg-clip-text Особенности проекта
+                    h1.section-header.bg-clip-text Особенности проекта
                     img(src=require('./assets/begin-header.png'))
                         
                 div.row.my-4.justify-content-center
-                    .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#newbie")
-                            div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/icons/newbie.svg'))
-                            div.slide-preview-text.animated Навигация новичка
-                            
-                    .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#craft")
-                            div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/icons/craft.svg'))
-                            div.slide-preview-text.animated Создание предметов
-                        
-                    .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#economics")
-                            div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/icons/pickpocket.svg'))
-                            div.slide-preview-text.animated Экономика и торговля
-                        
-                    .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#fractions")
-                            div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/icons/speech.svg'))
-                            div.slide-preview-text.animated Фракции и гильдии
-                            
-                        
-                    .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#war")
-                            div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/icons/flags.svg'))
-                            div.slide-preview-text.animated Гражданская война
-                                    
-                    .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#skills")
-                            div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/icons/sword.svg'))
-                            div.slide-preview-text.animated Система боя и навыков 
-                                
-                    .col-sm-4.col-md-3.d-flex.flex-column.my-2
-                        a.slide-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href="#magic")
-                            div.slide-preview-icon.d-flex.justify-content-center.align-items-center
-                                img.animated.shadow.my-2(src=require('./assets/icons/mage.svg'))
-                            div.slide-preview-text.animated Магия и её изучение
-                            
+                    for item in data.sections
+                        .col-sm-4.col-md-3.d-flex.flex-column.my-2
+                            a.section-preview.d-flex.flex-column.justify-content-end.align-items-stretch.text-center(href='#'+item.name)
+                                div.section-preview-icon.d-flex.justify-content-center.align-items-center
+                                    img.animated.shadow.my-2(src=item.icon)
+                                div.section-preview-text.animated #{item.title}
                             
                 div.row: .col-12.begin-description.text-center.mt-5
                     p.
@@ -80,68 +43,9 @@ block body
                 div.row: .col-xl-10.offset-xl-1.col-sm-11.begin-description-2.bg-clip-text
                     p Займите своё место в мире SkyMP и определите его судьбу!
  
-            section#newbie.slide.py-2: .container
-                .slide-inner.d-flex.flex-column.align-items-stretch.justify-content-between
-                    h2.bg-clip-text.text-center
-                        | Чем я могу заняться в 
-                        span.name SkyMP?
-                        
-                    div#newb-carousel.carousel.carousel-flex.slide(data-ride="newb-carousel")
-                        .carousel-inner.border-grad-center
-                            each item, i in data.newbieItems
-                                .carousel-item.px-4(class=`${i==0 ? 'active' : ''}`)
-                                    h3.d-flex.justify-content-between.align-items-center.text-uppercase
-                                        img.icon1(src=item.icon1)
-                                        span.text-center #{item.title}
-                                        img.icon2(src=item.icon2)
-                                    //- p.carousel-item-text.text-center.d-flex.flex-column.justify-content-between !{item.text}
-                                    div.carousel-item-text.text-center.flex-full.d-flex.flex-column.justify-content-between
-                                        each text in item.text.split('\n')
-                                            p #{text}
-
-                        .carousel-controls
-                            a.carousel-control-prev(href="#newb-carousel" role="button" data-slide="prev")
-                                img.animated(src=require('assets/icons/arrow-l.png'))
-                            a.carousel-control-next(href="#newb-carousel" role="button" data-slide="next")
-                                img.animated(src=require('assets/icons/arrow-r.png'))
-                        
-                        ol.carousel-indicators.d-flex.justify-content-between.mt-2
-                            each item, i in data.newbieItems
-                                li.d-flex.flex-column.mx-3(class=`${i==0 ? 'active' : ''}` data-target="#newb-carousel" data-slide-to=i)
-                                    div.icon.d-flex.justify-content-center.animated
-                                        img.icon1(src=item.icon1)
-                                        img.icon2(src=item.icon2)
-                                    div.title.text-center.animated #{item.title}
-                                    
-                    div.newb-footer.bg-clip-text.mt-2
-                        div.text-left Ты способен стать кем угодно
-                        div.text-right в мире SkyMP!
-
-            section#craft.slide.py-2: .container
-                .slide-inner.d-flex.flex-column.align-items-stretch.justify-content-between
-                    h2.slide-header.bg-clip-text.text-center.mt-2 Создание и улучшение предметов
-                    
-                    div.craft-tabs.d-flex.flex-column(role="tablist")
-                        ul.nav.d-flex.justify-content-center
-                            li.col.nav-item
-                            each item, i in data.craftItems
-                                li.col-2.nav-item.d-flex.flex-column.text-center.animated(role="tab")
-                                    div.icon.d-flex.justify-content-center.align-items-end: img(src=item.icon)
-                                    div.title.mt-2 #{item.title}
-                            li.col.nav-item
-                        div.tab-content.d-flex
-                            each item, i in data.craftItems
-                                div.tab-pane.d-flex.animated.fade(role="tabpanel")
-                                    div.tab-pane-inner.flex-full.d-flex.flex-column.justify-content-between.px-5
-                                        h3.text-center #{item.header}
-                                        p.text-center.my-2 #{item.text}
-                                        div.icons.d-flex.justify-content-between.align-items-end
-                                            each icon in item.icons
-                                                div.icon: img(src=icon)
-
-            section#economics.slide.py-2: .container
-                .slide-inner.d-flex.flex-column.align-items-stretch.justify-content-between
-                    h2.slide-header.bg-clip-text.text-center.mt-2 Система экономики SkyMP
-                    img(src=require('./assets/economics.png'))
-                                                            
+            include ./parts/newbie.pug
+            include ./parts/craft.pug
+            include ./parts/economics.pug
+            include ./parts/fractions.pug
+                                                                    
         include ../../components/footer/template.pug

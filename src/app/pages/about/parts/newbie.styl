@@ -1,0 +1,119 @@
+section#newbie
+    background-image url($root+'assets/images/bg-newb.png')
+
+    h2
+        color #000
+        font-family "Trajan Pro 3"
+        font-size 60px
+        line-height 96px
+        letter-spacing -1.81px
+        background-image linear-gradient(to top, #3e8397 0%, #000 100%)
+        filter drop-shadow(1px 2px 0 #000) drop-shadow(0 0 49px #fff)
+
+        .name
+            font-size 90px
+
+    #newb-carousel
+        flex 1 1 auto
+
+        .carousel-inner
+            background-image linear-gradient(to right, rgba(white, 0) 0%, rgba(white, 0.5) 50%, rgba(white, 0) 100%)
+            // background-image linear-gradient(to right, rgba(white, 0) 0%, rgba(white, 0.5) 40%, rgba(white, 0.5) 60%, rgba(white, 0) 100%)
+            // border-width 2px
+
+        .carousel-control-prev, .carousel-control-next
+            width 10%
+            opacity 1
+
+        .carousel-item
+            padding 1rem
+
+            & > h3
+                text-shadow 1px 2px 2px #000, 0 0 17px rgba(255, 255, 255, 0.55)
+                color #27525d
+                font-family "Trajan Pro 3"
+                font-size 89px
+                line-height 1em
+
+            h3 > img
+                max-height 2em
+
+        .carousel-item-text
+            text-shadow 0 0 43px white
+            color #000
+            font-family Aniron
+            font-size 27px
+            font-weight 700
+            letter-spacing -0.5px
+            line-height 1em
+            min-height 7em
+
+            & > p
+                margin 0
+
+    .carousel-indicators
+        position relative
+        top auto
+        left auto
+        right auto
+        bottom auto
+        width auto
+        height auto
+        margin 0
+        background none
+
+        & > li
+            position relative
+            top auto
+            left auto
+            right auto
+            bottom auto
+            width auto
+            height auto
+            margin 0
+            text-indent 0
+            background none
+
+            cursor pointer
+
+            .icon
+                position relative
+                flex 1 1 auto
+                filter drop-shadow(0 0 2px #fff)
+
+                & > img
+                    max-height 100px
+                    max-width 50%
+
+            .title
+                color #fff
+                font-family "Trajan Pro 3"
+                font-size 21px
+                font-weight 700
+                letter-spacing -0.31px
+                text-shadow 0 0 17px #000
+
+        // .carousel-indicators
+        //     .icon > img
+        //         filter drop-shadow(0 0 1px #fff)
+
+        & > li.active, & > li:hover
+            $color = #ffebb9
+            background none
+
+            .icon
+                filter drop-shadow(0 0 5px $color)
+
+            .title
+                color #000
+                text-shadow 0 0 17px $color
+
+
+    .newb-footer
+        color #fff
+        font-family "Trajan Pro 3"
+        font-size 63px
+        line-height 82.47px
+        letter-spacing -1.12px
+        background-image linear-gradient(to top, #fad375 0%, #dfdfdf 100%)
+        filter drop-shadow(2px 1px 7px black)

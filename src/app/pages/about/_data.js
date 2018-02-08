@@ -1,6 +1,42 @@
 module.exports = {
-    ENV: process.env.NODE_ENV,
-    WEBPACK: process.env.WEBPACK,
+    sections: [
+        {
+            name: 'newbie',
+            title: 'Навигация новичка',
+            icon: require('./assets/icons/newbie.svg'),
+        },
+        {
+            name: 'craft',
+            title: 'Создание предметов',
+            icon: require('./assets/icons/craft.svg'),
+        },
+        {
+            name: 'economics',
+            title: 'Экономика и торговля',
+            icon: require('./assets/icons/pickpocket.svg'),
+        },
+        {
+            name: 'fractions',
+            title: 'Фракции и гильдии',
+            icon: require('./assets/icons/speech.svg'),
+        },
+        {
+            name: 'war',
+            title: 'Гражданская война',
+            icon: require('./assets/icons/flags.svg'),
+        },
+        {
+            name: 'skills',
+            title: 'Система боя и навыков ',
+            icon: require('./assets/icons/sword.svg'),
+        },
+        {
+            name: 'magic',
+            title: 'Магия и её изучение',
+            icon: require('./assets/icons/mage.svg'),
+        }
+    ],
+
 
     newbieItems: [
         {

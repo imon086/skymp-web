@@ -1,0 +1,79 @@
+section#craft
+    background-image url($root+'assets/images/bg-craft.png')
+
+    h2
+        font-weight 400
+        // transform scaleX(0.8)
+
+    .craft-tabs
+        flex 1 1 auto
+
+        .nav
+            height 200px
+
+            & > .nav-item
+                border-bottom 3.4px solid black
+                // border-image linear-gradient(to right, #000 0%, #000 100%) 1 // just color don't work well. Different width issue
+
+                & > .icon
+                    flex 1 1 auto
+                & > .icon > img
+                    max-width 100%
+                    max-height 100%
+                    filter drop-shadow(0 0 10px #fff)
+
+                & > .title
+                    color #000
+                    font-family "Trajan Pro 3"
+                    font-size 20px
+                    font-weight bolder
+                    line-height 1em
+                    text-shadow 0 0 8px #fff
+
+                &.active
+                    background-image linear-gradient(to top, rgba(#fff, 0.5) 20%, rgba(#fff, 0) 100%)
+                    border 0
+
+            & > .nav-item:first-child
+                // flex 1 1 auto
+                border-image linear-gradient(to left, rgba(#000, 1) 0%, rgba(#000, 0) 100%) 1
+
+            & > .nav-item:last-child
+                // flex 1 1 auto
+                border-image linear-gradient(to right, rgba(#000, 1) 0%, rgba(#000, 0) 100%) 1
+
+
+        .tab-content
+            flex 1 1 auto
+            background-image linear-gradient(to bottom, rgba(#fff, 0.5) 20%, rgba(#fff, 0) 100%)
+
+            & > .tab-pane:not(.active)
+                display none !important
+
+            h3
+                color #fff
+                font-family "Trajan Pro 3"
+                font-size 30px
+                font-weight 400
+                line-height 2em
+                text-shadow 1px 1px 5px rgba(0, 0, 0, 0.93)
+
+                border-bottom 3px solid black
+                border-image linear-gradient(to right, rgba(#000, 0) 10%, rgba(#000, 1) 30%, rgba(#000, 1) 70%, rgba(#000, 0) 90%) 1
+
+            p
+                color #000
+                font-family Aniron
+                font-size 20px
+                font-weight 700
+                line-height 46.96px
+                letter-spacing -1px
+
+            .icons
+                .icon
+                    width 20%
+                    text-align center
+
+                img
+                    max-height 150px
+                    max-width 200px

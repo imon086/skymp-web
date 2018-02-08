@@ -1,0 +1,24 @@
+if !data
+    - var data = require('../_data');
+    
+section#craft.section.py-2: .container
+    .section-inner.d-flex.flex-column.align-items-stretch.justify-content-between
+        h2.section-header.bg-clip-text.text-center.mt-2 Создание и улучшение предметов
+        
+        div.craft-tabs.d-flex.flex-column(role="tablist")
+            ul.nav.d-flex.justify-content-center
+                li.col.nav-item
+                each item, i in data.craftItems
+                    li.col-2.nav-item.d-flex.flex-column.text-center.animated(role="tab")
+                        div.icon.d-flex.justify-content-center.align-items-end: img(src=item.icon)
+                        div.title.mt-2 #{item.title}
+                li.col.nav-item
+            div.tab-content.d-flex
+                each item, i in data.craftItems
+                    div.tab-pane.d-flex.animated.fade(role="tabpanel")
+                        div.tab-pane-inner.flex-full.d-flex.flex-column.justify-content-between.px-5
+                            h3.text-center #{item.header}
+                            p.text-center.my-2 #{item.text}
+                            div.icons.d-flex.justify-content-between.align-items-end
+                                each icon in item.icons
+                                    div.icon: img(src=icon)
