@@ -1,16 +1,38 @@
 if !data
     - var data = require('../_data');
-    
+
 section#fractions.section.py-2: .container
     .section-inner
-        //- iconic font try
-        //- h2.section-header.bg-clip-text.text-center.mt-2.d-flex.justify-content-center
-            i.fa.fa-align-right
-            span Фракции и гильдии
-            i.fa.fa-align-left
 
         div.section-header.d-flex.justify-content-center.mt-2
             i.icon.mr-2
             h2.bg-clip-text.text-center Фракции и гильдии
             i.icon.ml-2
+
+        div.feature.text-center
+            |    Для удобного и эффективного развития своего персонажа
+            |    ты можешь вступить в гильдию или фракцию, открывая себя
+            |    дополнительные возможности
+
+        h3.text-center.sub-title.justify-content-center.mt-2
+            |   нейтральные гильдии и фракции
+
+        div.flags.row.d-flex.flex-nowrap.neutral-guilds
+            for item in data.neutralGuilds
+                div.item                
+                    img(src=item.flag)
+        
+        div.feature.text-center
+            |   Создавать союзы, держать нейтралитет или враждовать - решать тебе!
             
+        div.line
+
+        h3.text-center.sub-title.justify-content-center.mt-2
+            |   непримиримые враждующие фракции
+
+        div.flags.row.d-flex.flex-nowrap.neutral-guilds
+            for item in data.warGuilds
+                div.item                
+                    img(src=item.flag)
+
+

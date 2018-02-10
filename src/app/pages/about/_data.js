@@ -162,5 +162,56 @@ module.exports = {
                 require('./assets/craft-img/enchanting-decor-3.png')
             ]
         },
+    ],
+
+    neutralGuilds: [
+        {
+            flag: require('./assets/fractions-img/guildKILLER.png')
+        },
+        {
+            flag: require('./assets/fractions-img/guildTHIEF.png')
+        },
+        {
+            flag: require('./assets/fractions-img/guildMAGE.png')
+        },
+        {
+            flag: require('./assets/fractions-img/guildTOWN.png')
+        },
+        {
+            flag: require('./assets/fractions-img/guildORC.png')
+        },
+        {
+            flag: require('./assets/fractions-img/guildSEDOBORODIE.png')
+        }
+    ],
+
+    warGuilds: [
+        {
+            flag: require('./assets/fractions-img/guildWEREWOLF.png')
+        },
+        {
+            flag: require('./assets/fractions-img/swords.png')
+        },
+        {
+            flag: require('./assets/fractions-img/guildVAMPIRES.png')
+        },
+        {
+            flag: require('./assets/fractions-img/guildEMPER.png')
+        },
+        {
+            flag: require('./assets/fractions-img/swords.png')
+        },
+        {
+            flag: require('./assets/fractions-img/guildBB.png')
+        },
+        {
+            flag: require('./assets/fractions-img/guildTALMOR.png')
+        },
+        {
+            flag: require('./assets/fractions-img/swords.png')
+        },
+        {
+            flag: require('./assets/fractions-img/guildBLADES.png')
+        }
     ]
 };
